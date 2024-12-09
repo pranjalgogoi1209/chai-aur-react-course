@@ -1,0 +1,40 @@
+# REACT =>
+
+    * REACT DOM : work on web app
+    * REACT NATIVE : work on mobile app
+
+
+# CREATE REACT APP =>
+
+    * npx create-react-app appname
+    * npx : npx(node package executer), We don't need to install npm(node package manager) in our system, so we are using npx.
+    * create-react-app : It's an utility, utility means software.
+
+
+# START THE REACT APP IN DEVELOPMENT MODE =>
+
+    * npm run start
+
+
+# START THE REACT APP IN PRODUCTION MODE =>
+
+    * npm run build
+
+
+-----------------------------------
+
+
+# CREATE REACT APP USING VITE =>
+
+    * npm create vite@latest
+
+
+# INSTALL NODE MODULES =>
+
+    * npm install
+
+
+# START THE REACT+VITE APP IN DEVELOPMENT MODE =>
+
+    * npm run dev
+

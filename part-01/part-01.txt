@@ -1,0 +1,53 @@
+# WHY TO LEARN REACT =>
+    * Hype, job, trend, build UI.
+    * Makes easy to manage & build complex frontend.
+    * React is Single Page Application (SPA).
+
+# WHEN SHOULD I LEARN REACT =>
+    * After mastering js.
+    * Most project don't need react in initial phase.
+
+# WHY REACT WAS CREATED => 
+    * To solve the phantom message problem in facebook.
+
+    State => JS  & UI => DOM (Initially both DOM and States didn't sync)
+    => First of all Khan academy and Unsplash adopt React.
+
+# JAVASCRIPT MUST TO KNOW TOPICS =>
+    * Javascript internal work
+    * Single thread execution
+    * Global context
+    * Method : blind(), this()
+    * Dom inner work
+
+# REACT MUST TO KNOW TOPICS =>
+    * Babel
+    * Fibre
+    * Virtual Dom
+    * Diff algo
+    * Hydration
+    * Tree Shaking
+
+# FRAMEWORK vs LIBRARY
+     * Framework : (Military) More rules, Big
+     * Library : (Cool dude) More freedom, Small 
+
+# TOPICS TO LEARN => 
+    * Core of React (State or UI manipulation, JSX)
+    * Component reusability
+    * Reusing of component (props)
+    * How to propagate change (hooks) => useState, useEffect
+
+# ADDITIONAL ADDON TO REACT =>
+    * Router (React Router DOM - Library)
+    * State Management (Redux, Redux Toolkit, Zustand, Context API)
+    * Class based component (Legacy code)
+    * BAAS Apps (Backend as a service)
+        => Appwrite, Firebase, Superbase
+        => Social media clone, E-commerce app
+
+# AFTER REACT =>
+    * React is not a complete solution in most case 
+        => No SEO, Browser render of JS, No Routing
+    * Frame work
+        => Next js, Getsby, Remix

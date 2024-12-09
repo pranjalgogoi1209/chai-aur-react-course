@@ -1,0 +1,2 @@
+# setUser() : React's state updates are batched and asynchronous, all these updates are performed on the current value of counter, which hasn't been updated yet. This means that all four setCounter calls are using the same initial value of counter.
+
