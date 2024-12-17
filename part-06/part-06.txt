@@ -1,0 +1,71 @@
+React Fibre architecture : https://github.com/acdlite/react-fiber-architecture
+
+# hydration : Hydration in React is the process of attaching event listeners and making a server-rendered HTML page interactive on the client side. It is commonly used in Server-Side Rendering (SSR) scenarios where HTML is generated on the server and sent to the browser. React then "hydrates" this static HTML, attaching the React component tree and event listeners to it so that the app becomes fully functional on the client side.
+
+* Why Hydration is Needed:
+    When a React app is server-rendered:
+
+* The server sends the pre-rendered HTML to the browser.
+    This improves SEO and enables faster initial loading.   
+    However, the app is just static HTML at this stage; no interactivity works yet.
+    The React library then hydrates the HTML by adding event listeners and connecting React's virtual DOM to the existing DOM.
+
+* Hydration Flow:
+    Server-Side Rendering generates HTML.
+    React sends the HTML to the browser.
+    React uses ReactDOM.hydrate() (or ReactDOM.hydrateRoot in React 18+) to "hydrate" the DOM.
+    React components are connected to the pre-rendered HTML, enabling interactivity.
+
+
+# reconciliation : In React, reconciliation is the process of updating the DOM to match the React virtual DOM. React efficiently determines what has changed and applies only the necessary updates to the real DOM.
+
+* Why Reconciliation is Needed:
+    React uses a virtual DOM (a lightweight copy of the actual DOM) to improve performance. When the state or props of a component change:
+
+    React re-renders the component and creates a new virtual DOM tree.
+    React compares the new virtual DOM with the previous virtual DOM using its reconciliation algorithm.
+    React determines the minimum set of changes needed and updates the real DOM accordingly.
+    This comparison and update process is called reconciliation.
+
+* How Reconciliation Works:
+    React uses a diffing algorithm to efficiently compare the old and new virtual DOM trees. The process works as follows:
+
+    * Tree Diffing:
+
+        React compares the old and new virtual DOM trees.
+        If a node is of a different type (e.g., <div> replaced by <span>), React assumes the entire subtree has changed and re-renders it.
+
+    * Element Updates:
+
+        If two nodes are of the same type (e.g., both <div>):
+        React keeps the node in place and updates only the attributes or children that have changed.
+    
+    * Keys for Optimization:
+
+        When rendering lists, React uses keys to identify which items have changed, been added, or been removed.
+        Keys help React efficiently update the DOM without re-rendering unchanged items.
+
+# fibre : In React, Fiber is the internal reconciliation algorithm and architecture introduced in React 16 to improve the rendering process. It allows React to break rendering work into smaller chunks and prioritize updates, making the UI more responsive and smoother, especially for complex applications.
+
+* Why Fiber Was Introduced:
+    Prior to Fiber, React used a stack-based reconciliation algorithm. This approach had limitations:
+
+    * Synchronous rendering: Once rendering started, React could not pause or interrupt it.
+        Long updates would block the main thread, leading to janky UIs and slow user experience.
+        React Fiber was introduced to address these issues by making the rendering process incremental and interruptible.
+
+* Key Features of React Fiber:
+ 
+    * Incremental Rendering:
+        React can split the rendering work into smaller units (or "fibers").
+        React can pause rendering, perform higher-priority updates, and then resume where it left off.
+    
+        * Prioritization:
+            Fiber allows React to assign priority levels to updates. For example:
+            User input (e.g., typing or clicks) has higher priority.
+            Background updates (e.g., data fetching or animations) have lower priority.
+
+        * Concurrency:
+            Fiber enables concurrent rendering, where multiple updates can be worked on without blocking the main thread.
+            Better Performance for Large Applications:
+            With incremental updates, large UI updates don’t freeze the browser, improving user experience.
